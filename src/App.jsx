@@ -48,9 +48,10 @@ const App = () => {
         <FaDiamond/> Loading <FaDiamond/>
         </div> : ''}
 
-        {movies.map(({imdbID, Poster, Title, Type, Year}) => {
+        {movies.map(({imdbID, Link, Poster, Title, Type, Year}) => {
+          Link = `https://www.imdb.com/title/${imdbID}`
           return (
-            <Movie key={imdbID} image={Poster} title={Title} category={Type} year={Year} />
+            <Movie key={imdbID} link={Link} image={Poster} title={Title} category={Type} year={Year} />
           )
         })}
 
