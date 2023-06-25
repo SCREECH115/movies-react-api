@@ -4,6 +4,7 @@
   -webkit-text-fill-color: transparent;
   font-size: 3rem;
   font-weight: 900;
+  user-select: none;
 }
 
 .title-container{
@@ -24,8 +25,26 @@
   font-size: 24px;
 }
 
+
+.search-container input:focus{
+  width: 50vw;
+  border-radius: 0;
+  border-bottom: 1px solid #d5c1b4;
+  background: #222;
+  color: #d5c1b4;
+  font-weight: 600;
+  padding: 0 1rem;
+  outline: none;
+}
+
+input:focus ~ .search-icon{
+  position: absolute;
+  right: 26%;
+}
+
+
 .search-container input{
-  width: 80vw;
+  width: 15vw;
   height: 5vh;
   background: #222;
   outline: none;
@@ -34,41 +53,45 @@
   font-weight: 600;
   border-radius: 15px;
   padding: 0 1rem;
+  transition: all 0.5s ease-in-out;
+
 }
 
 .search-icon{
     position: absolute;
-    right: 12%;
+    right: 43%;
+    transition: all 0.5s ease-in-out;
 }
 
 .search-icon:hover{
   cursor: pointer;
+  transform: scale(1.3);
 }
 
 .movie-container{
   display: grid;
-  grid-template-columns: repeat(4, 200px);
-  grid-gap: 20px;
+  grid-template-columns: repeat(4, 300px);
+  grid-gap: 50px;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 30px;  
+}
+
+@media screen and (max-width: 1400px){
+  .movie-container{
+    grid-template-columns: repeat(3, 300px);
+  }
 }
 
 @media screen and (max-width: 1200px){
   .movie-container{
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(2, 300px);
   }
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 700px){
   .movie-container{
-    grid-template-columns: repeat(2, 200px);
-  }
-}
-
-@media screen and (max-width: 600px){
-  .movie-container{
-    grid-template-columns: repeat(1, 200px);
+    grid-template-columns: repeat(1, 300px);
   }
 }
 

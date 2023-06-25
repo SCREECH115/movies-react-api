@@ -12,8 +12,8 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   border-radius: 5px;
-   width: 200px;
+   border-radius: 10px;
+   width: 300px;
    overflow: hidden;
    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 25px;
    transition: all 0.3s ease-in-out;
@@ -41,4 +41,11 @@
 .movie-title{
    color: #d5c1b4;
    font-weight: bold;
+}
+
+.year{
+   color: #aaa;
+   font-size: 12px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
 }
