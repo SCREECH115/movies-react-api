@@ -77,6 +77,15 @@ input:focus ~ .search-icon{
   margin-top: 30px;  
 }
 
+.movie-error{
+  color: #d5c1b4;
+  font-size: 32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media screen and (max-width: 1400px){
   .movie-container{
     grid-template-columns: repeat(3, 300px);

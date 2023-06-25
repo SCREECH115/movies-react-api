@@ -12,10 +12,15 @@ const App = () => {
   const [input, setInput] = useState('');
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   const searchMovies = async () => {
     setLoading(true)
     setMovies([])
+
+    if(loading){
+      setError(false)
+    }
 
     if (cache.has(input)) {
       setMovies(cache.get(input))
@@ -25,6 +30,18 @@ const App = () => {
 
     const response = await fetch(`${API_URL}&s=${input}`)
     const data = await response.json()
+
+    
+
+    if (data.Error) {
+      setError(true)
+      setLoading(false)
+      return
+    } else {
+      setError(false)
+    }
+
+
     console.log(data)
     cache.set(input, data.Search)
     setMovies(data.Search)
@@ -47,6 +64,11 @@ const App = () => {
         {loading ? <div className="movie-loading">
         <FaDiamond/> Loading <FaDiamond/>
         </div> : ''}
+        
+        {error ? <div className="movie-error">
+          Movie not found!
+        </div> : ''}
+
 
         {movies.map(({imdbID, Link, Poster, Title, Type, Year}) => {
           Link = `https://www.imdb.com/title/${imdbID}`
