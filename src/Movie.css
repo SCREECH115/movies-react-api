@@ -1,0 +1,44 @@
+.image img{
+}
+
+.image{
+   width: 300px;
+   height: 300px;
+   margin-bottom: -5px;
+}
+
+.container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border-radius: 5px;
+   width: 200px;
+   overflow: hidden;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 25px;
+   transition: all 0.3s ease-in-out;
+}  
+
+.container:hover{
+   transform: translateY(-5px); 
+   cursor: pointer;
+}
+
+.details{
+   background: #333;
+   width: 100%; 
+   padding: 10px;
+   line-height: 25px;
+}
+
+.category{
+   color: #aaa;
+   font-size: 12px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+}
+
+.movie-title{
+   color: #d5c1b4;
+   font-weight: bold;
+}
