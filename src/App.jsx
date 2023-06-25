@@ -3,7 +3,7 @@ import { FaSistrix, FaDiamond } from 'react-icons/fa6'
 import Movie from './Movie'
 import { useState } from 'react'
 
-const API_URL = `http://www.omdbapi.com/?i=tt3896198&apikey=${import.meta.env.VITE_API_KEY}`
+const API_URL = `https://www.omdbapi.com/?i=tt3896198&apikey=${import.meta.env.VITE_API_KEY}`
 
 const cache = new Map();
 
