@@ -7,7 +7,10 @@ const API_URL = `https://www.omdbapi.com/?i=tt3896198&apikey=${import.meta.env.V
 
 const cache = new Map();
 
+
 const App = () => {
+
+  
 
   const [input, setInput] = useState('');
   const [movies, setMovies] = useState([])
@@ -25,6 +28,7 @@ const App = () => {
     if (cache.has(input)) {
       setMovies(cache.get(input))
       setLoading(false)
+      setError(false)
       return
     }
 
